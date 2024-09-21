@@ -1,0 +1,51 @@
+services:
+    app:
+        build:
+            dockerfile: _Docker/app/Dockerfile
+        container_name: what-to-watch-app
+        restart: on-failure
+        environment:
+            PHP_IDE_CONFIG: serverName=docker
+        volumes:
+            - .:/var/www/html
+        networks:
+            - wtw_network
+        ports:
+            - 9000:9000
+        depends_on:
+            - mysql
+
+    mysql:
+        image: mysql:8.0
+        container_name: wtw_database
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+        volumes:
+            - wtw_database_data:/var/lib/mysql
+        networks:
+            - wtw_network
+        ports:
+            - ${DB_PORT}:3306
+
+    webserver:
+        build:
+            dockerfile: _Docker/nginx/Dockerfile
+        volumes:
+            - .:/var/www/html:delegated
+        container_name: wtw_webserver
+        networks:
+            - wtw_network
+        ports:
+            - 80:80
+            - 443:443
+        depends_on:
+            - app
+
+volumes:
+    wtw_database_data:
+
+networks:
+    wtw_network:

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css?v=10.1.16" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css?v=10.1.16" rel="stylesheet" type="text/css">
+  <link href="_css/style.css?v=10.1.16" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Jobs/DeleteImages.php.html#13">App\Jobs\DeleteImages</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/UploadCommentsFromKinoposk.php.html#14">App\Jobs\UploadCommentsFromKinoposk</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Console/Kernel.php.html#11">App\Console\Kernel</a></td><td class="text-right">40%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Jobs/DeleteImages.php.html#13">App\Jobs\DeleteImages</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Jobs/UploadCommentsFromKinoposk.php.html#14">App\Jobs\UploadCommentsFromKinoposk</a></td><td class="text-right">20</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Console/Kernel.php.html#16"><abbr title="App\Console\Kernel::schedule">schedule</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/DeleteImages.php.html#23"><abbr title="App\Jobs\DeleteImages::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/DeleteImages.php.html#31"><abbr title="App\Jobs\DeleteImages::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/UploadCommentsFromKinoposk.php.html#24"><abbr title="App\Jobs\UploadCommentsFromKinoposk::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/UploadCommentsFromKinoposk.php.html#33"><abbr title="App\Jobs\UploadCommentsFromKinoposk::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Jobs/DeleteImages.php.html#31"><abbr title="App\Jobs\DeleteImages::handle">handle</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Jobs/UploadCommentsFromKinoposk.php.html#33"><abbr title="App\Jobs\UploadCommentsFromKinoposk::handle">handle</abbr></a></td><td class="text-right">12</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 10.1.16</a> using <a href="https://www.php.net/" target="_top">PHP 8.3.11</a> and <a href="https://phpunit.de/">PHPUnit 10.5.34</a> at Sat Sep 21 13:42:08 +06 2024.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js?v=10.1.16" type="text/javascript"></script>
+  <script src="_js/d3.min.js?v=10.1.16" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js?v=10.1.16" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([2,0,0,0,0,1,0,0,0,0,0,50], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([5,0,0,0,0,0,0,0,0,0,0,125], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[100,2,"<a href=\"Casts\/Json.php.html#8\">App\\Casts\\Json<\/a>"],[40,2,"<a href=\"Console\/Kernel.php.html#11\">App\\Console\\Kernel<\/a>"],[100,2,"<a href=\"Exceptions\/Handler.php.html#16\">App\\Exceptions\\Handler<\/a>"],[100,0,"<a href=\"Exceptions\/InvalidCredentialsException.php.html#7\">App\\Exceptions\\InvalidCredentialsException<\/a>"],[100,5,"<a href=\"Http\/Controllers\/AuthController.php.html#12\">App\\Http\\Controllers\\AuthController<\/a>"],[100,4,"<a href=\"Http\/Controllers\/CommentController.php.html#11\">App\\Http\\Controllers\\CommentController<\/a>"],[100,0,"<a href=\"Http\/Controllers\/Controller.php.html#9\">App\\Http\\Controllers\\Controller<\/a>"],[100,3,"<a href=\"Http\/Controllers\/FavoriteController.php.html#9\">App\\Http\\Controllers\\FavoriteController<\/a>"],[100,9,"<a href=\"Http\/Controllers\/FilmController.php.html#13\">App\\Http\\Controllers\\FilmController<\/a>"],[100,4,"<a href=\"Http\/Controllers\/GenreController.php.html#10\">App\\Http\\Controllers\\GenreController<\/a>"],[100,4,"<a href=\"Http\/Controllers\/PromoController.php.html#9\">App\\Http\\Controllers\\PromoController<\/a>"],[100,3,"<a href=\"Http\/Controllers\/UserController.php.html#8\">App\\Http\\Controllers\\UserController<\/a>"],[100,0,"<a href=\"Http\/Kernel.php.html#33\">App\\Http\\Kernel<\/a>"],[100,1,"<a href=\"Http\/Requests\/BaseFormRequest.php.html#9\">App\\Http\\Requests\\BaseFormRequest<\/a>"],[100,5,"<a href=\"Http\/Requests\/CommentRequest.php.html#9\">App\\Http\\Requests\\CommentRequest<\/a>"],[100,3,"<a href=\"Http\/Requests\/FavoriteRequest.php.html#8\">App\\Http\\Requests\\FavoriteRequest<\/a>"],[100,5,"<a href=\"Http\/Requests\/FilmRequest.php.html#10\">App\\Http\\Requests\\FilmRequest<\/a>"],[100,2,"<a href=\"Http\/Requests\/GenreRequest.php.html#5\">App\\Http\\Requests\\GenreRequest<\/a>"],[100,2,"<a href=\"Http\/Requests\/LoginRequest.php.html#5\">App\\Http\\Requests\\LoginRequest<\/a>"],[100,8,"<a href=\"Http\/Requests\/UserRequest.php.html#9\">App\\Http\\Requests\\UserRequest<\/a>"],[100,3,"<a href=\"Http\/Resources\/CommentResource.php.html#7\">App\\Http\\Resources\\CommentResource<\/a>"],[100,1,"<a href=\"Http\/Resources\/FilmsResource.php.html#8\">App\\Http\\Resources\\FilmsResource<\/a>"],[100,1,"<a href=\"Http\/Resources\/GenreResource.php.html#8\">App\\Http\\Resources\\GenreResource<\/a>"],[100,2,"<a href=\"Http\/Resources\/UserResource.php.html#8\">App\\Http\\Resources\\UserResource<\/a>"],[100,4,"<a href=\"Jobs\/Classes\/BaseWorkWithFilm.php.html#8\">App\\Jobs\\Classes\\BaseWorkWithFilm<\/a>"],[0,4,"<a href=\"Jobs\/DeleteImages.php.html#13\">App\\Jobs\\DeleteImages<\/a>"],[100,3,"<a href=\"Jobs\/PendingFilms.php.html#14\">App\\Jobs\\PendingFilms<\/a>"],[100,3,"<a href=\"Jobs\/UpdateFilms.php.html#14\">App\\Jobs\\UpdateFilms<\/a>"],[0,4,"<a href=\"Jobs\/UploadCommentsFromKinoposk.php.html#14\">App\\Jobs\\UploadCommentsFromKinoposk<\/a>"],[100,1,"<a href=\"Listeners\/FilmListener.php.html#8\">App\\Listeners\\FilmListener<\/a>"],[100,4,"<a href=\"Models\/Comment.php.html#11\">App\\Models\\Comment<\/a>"],[100,2,"<a href=\"Models\/Favorite.php.html#23\">App\\Models\\Favorite<\/a>"],[100,9,"<a href=\"Models\/Film.php.html#42\">App\\Models\\Film<\/a>"],[100,0,"<a href=\"Models\/Genre.php.html#8\">App\\Models\\Genre<\/a>"],[100,1,"<a href=\"Models\/Promo.php.html#22\">App\\Models\\Promo<\/a>"],[100,1,"<a href=\"Models\/Role.php.html#9\">App\\Models\\Role<\/a>"],[100,6,"<a href=\"Models\/User.php.html#30\">App\\Models\\User<\/a>"],[100,3,"<a href=\"Observers\/FilmObserver.php.html#10\">App\\Observers\\FilmObserver<\/a>"],[100,7,"<a href=\"Policies\/CommentPolicy.php.html#10\">App\\Policies\\CommentPolicy<\/a>"],[100,1,"<a href=\"Policies\/FilmPolicy.php.html#7\">App\\Policies\\FilmPolicy<\/a>"],[100,3,"<a href=\"Providers\/AppServiceProvider.php.html#13\">App\\Providers\\AppServiceProvider<\/a>"],[100,1,"<a href=\"Providers\/AuthServiceProvider.php.html#13\">App\\Providers\\AuthServiceProvider<\/a>"],[100,2,"<a href=\"Providers\/EventServiceProvider.php.html#13\">App\\Providers\\EventServiceProvider<\/a>"],[100,2,"<a href=\"Providers\/RouteServiceProvider.php.html#11\">App\\Providers\\RouteServiceProvider<\/a>"],[100,4,"<a href=\"Repositories\/classes\/FilmRepository.php.html#13\">App\\Repositories\\classes\\FilmRepository<\/a>"],[100,6,"<a href=\"Repositories\/classes\/KinopoiskFilmRepository.php.html#9\">App\\Repositories\\classes\\KinopoiskFilmRepository<\/a>"],[100,2,"<a href=\"Rules\/CommentBelongsToFilm.php.html#9\">App\\Rules\\CommentBelongsToFilm<\/a>"],[100,4,"<a href=\"Rules\/DisallowRatingInResponse.php.html#8\">App\\Rules\\DisallowRatingInResponse<\/a>"],[100,7,"<a href=\"Rules\/FilmExists.php.html#9\">App\\Rules\\FilmExists<\/a>"],[100,4,"<a href=\"Rules\/ImageUrl.php.html#8\">App\\Rules\\ImageUrl<\/a>"],[100,8,"<a href=\"Services\/CommentService.php.html#10\">App\\Services\\CommentService<\/a>"],[100,10,"<a href=\"Services\/FilmService.php.html#13\">App\\Services\\FilmService<\/a>"],[100,4,"<a href=\"Services\/HttpClientService.php.html#9\">App\\Services\\HttpClientService<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Casts\/Json.php.html#15\">App\\Casts\\Json::get<\/a>"],[100,1,"<a href=\"Casts\/Json.php.html#25\">App\\Casts\\Json::set<\/a>"],[0,1,"<a href=\"Console\/Kernel.php.html#16\">App\\Console\\Kernel::schedule<\/a>"],[100,1,"<a href=\"Console\/Kernel.php.html#26\">App\\Console\\Kernel::commands<\/a>"],[100,1,"<a href=\"Exceptions\/Handler.php.html#32\">App\\Exceptions\\Handler::register<\/a>"],[100,1,"<a href=\"Exceptions\/Handler.php.html#75\">App\\Exceptions\\Handler::unauthenticated<\/a>"],[100,2,"<a href=\"Http\/Controllers\/AuthController.php.html#14\">App\\Http\\Controllers\\AuthController::register<\/a>"],[100,2,"<a href=\"Http\/Controllers\/AuthController.php.html#31\">App\\Http\\Controllers\\AuthController::login<\/a>"],[100,1,"<a href=\"Http\/Controllers\/AuthController.php.html#44\">App\\Http\\Controllers\\AuthController::logout<\/a>"],[100,1,"<a href=\"Http\/Controllers\/CommentController.php.html#13\">App\\Http\\Controllers\\CommentController::add<\/a>"],[100,1,"<a href=\"Http\/Controllers\/CommentController.php.html#23\">App\\Http\\Controllers\\CommentController::show<\/a>"],[100,1,"<a href=\"Http\/Controllers\/CommentController.php.html#36\">App\\Http\\Controllers\\CommentController::update<\/a>"],[100,1,"<a href=\"Http\/Controllers\/CommentController.php.html#45\">App\\Http\\Controllers\\CommentController::delete<\/a>"],[100,1,"<a href=\"Http\/Controllers\/FavoriteController.php.html#11\">App\\Http\\Controllers\\FavoriteController::index<\/a>"],[100,1,"<a href=\"Http\/Controllers\/FavoriteController.php.html#18\">App\\Http\\Controllers\\FavoriteController::add<\/a>"],[100,1,"<a href=\"Http\/Controllers\/FavoriteController.php.html#31\">App\\Http\\Controllers\\FavoriteController::delete<\/a>"],[100,2,"<a href=\"Http\/Controllers\/FilmController.php.html#15\">App\\Http\\Controllers\\FilmController::index<\/a>"],[100,3,"<a href=\"Http\/Controllers\/FilmController.php.html#38\">App\\Http\\Controllers\\FilmController::film<\/a>"],[100,1,"<a href=\"Http\/Controllers\/FilmController.php.html#49\">App\\Http\\Controllers\\FilmController::similar<\/a>"],[100,1,"<a href=\"Http\/Controllers\/FilmController.php.html#54\">App\\Http\\Controllers\\FilmController::update<\/a>"],[100,1,"<a href=\"Http\/Controllers\/FilmController.php.html#63\">App\\Http\\Controllers\\FilmController::add<\/a>"],[100,1,"<a href=\"Http\/Controllers\/FilmController.php.html#73\">App\\Http\\Controllers\\FilmController::delete<\/a>"],[100,1,"<a href=\"Http\/Controllers\/GenreController.php.html#15\">App\\Http\\Controllers\\GenreController::index<\/a>"],[100,1,"<a href=\"Http\/Controllers\/GenreController.php.html#27\">App\\Http\\Controllers\\GenreController::store<\/a>"],[100,1,"<a href=\"Http\/Controllers\/GenreController.php.html#42\">App\\Http\\Controllers\\GenreController::update<\/a>"],[100,1,"<a href=\"Http\/Controllers\/GenreController.php.html#57\">App\\Http\\Controllers\\GenreController::destroy<\/a>"],[100,1,"<a href=\"Http\/Controllers\/PromoController.php.html#14\">App\\Http\\Controllers\\PromoController::index<\/a>"],[100,2,"<a href=\"Http\/Controllers\/PromoController.php.html#24\">App\\Http\\Controllers\\PromoController::store<\/a>"],[100,1,"<a href=\"Http\/Controllers\/PromoController.php.html#38\">App\\Http\\Controllers\\PromoController::destroy<\/a>"],[100,1,"<a href=\"Http\/Controllers\/UserController.php.html#10\">App\\Http\\Controllers\\UserController::show<\/a>"],[100,2,"<a href=\"Http\/Controllers\/UserController.php.html#16\">App\\Http\\Controllers\\UserController::update<\/a>"],[100,1,"<a href=\"Http\/Requests\/BaseFormRequest.php.html#11\">App\\Http\\Requests\\BaseFormRequest::failedValidation<\/a>"],[100,1,"<a href=\"Http\/Requests\/CommentRequest.php.html#14\">App\\Http\\Requests\\CommentRequest::authorize<\/a>"],[100,1,"<a href=\"Http\/Requests\/CommentRequest.php.html#24\">App\\Http\\Requests\\CommentRequest::rules<\/a>"],[100,2,"<a href=\"Http\/Requests\/CommentRequest.php.html#46\">App\\Http\\Requests\\CommentRequest::requiredOnPostMethod<\/a>"],[100,1,"<a href=\"Http\/Requests\/CommentRequest.php.html#51\">App\\Http\\Requests\\CommentRequest::messages<\/a>"],[100,1,"<a href=\"Http\/Requests\/FavoriteRequest.php.html#13\">App\\Http\\Requests\\FavoriteRequest::authorize<\/a>"],[100,1,"<a href=\"Http\/Requests\/FavoriteRequest.php.html#23\">App\\Http\\Requests\\FavoriteRequest::rules<\/a>"],[100,1,"<a href=\"Http\/Requests\/FavoriteRequest.php.html#30\">App\\Http\\Requests\\FavoriteRequest::prepareForValidation<\/a>"],[100,1,"<a href=\"Http\/Requests\/FilmRequest.php.html#17\">App\\Http\\Requests\\FilmRequest::authorize<\/a>"],[100,1,"<a href=\"Http\/Requests\/FilmRequest.php.html#27\">App\\Http\\Requests\\FilmRequest::rules<\/a>"],[100,2,"<a href=\"Http\/Requests\/FilmRequest.php.html#48\">App\\Http\\Requests\\FilmRequest::getUniqRule<\/a>"],[100,1,"<a href=\"Http\/Requests\/FilmRequest.php.html#59\">App\\Http\\Requests\\FilmRequest::messages<\/a>"],[100,1,"<a href=\"Http\/Requests\/GenreRequest.php.html#7\">App\\Http\\Requests\\GenreRequest::authorize<\/a>"],[100,1,"<a href=\"Http\/Requests\/GenreRequest.php.html#12\">App\\Http\\Requests\\GenreRequest::rules<\/a>"],[100,1,"<a href=\"Http\/Requests\/LoginRequest.php.html#12\">App\\Http\\Requests\\LoginRequest::authorize<\/a>"],[100,1,"<a href=\"Http\/Requests\/LoginRequest.php.html#22\">App\\Http\\Requests\\LoginRequest::rules<\/a>"],[100,1,"<a href=\"Http\/Requests\/UserRequest.php.html#16\">App\\Http\\Requests\\UserRequest::authorize<\/a>"],[100,1,"<a href=\"Http\/Requests\/UserRequest.php.html#26\">App\\Http\\Requests\\UserRequest::rules<\/a>"],[100,2,"<a href=\"Http\/Requests\/UserRequest.php.html#46\">App\\Http\\Requests\\UserRequest::getRequiredRule<\/a>"],[100,3,"<a href=\"Http\/Requests\/UserRequest.php.html#51\">App\\Http\\Requests\\UserRequest::getUniqRule<\/a>"],[100,1,"<a href=\"Http\/Requests\/UserRequest.php.html#62\">App\\Http\\Requests\\UserRequest::attributes<\/a>"],[100,1,"<a href=\"Http\/Resources\/CommentResource.php.html#9\">App\\Http\\Resources\\CommentResource::buildTree<\/a>"],[100,1,"<a href=\"Http\/Resources\/CommentResource.php.html#17\">App\\Http\\Resources\\CommentResource::toArray<\/a>"],[100,1,"<a href=\"Http\/Resources\/CommentResource.php.html#37\">App\\Http\\Resources\\CommentResource::collection<\/a>"],[100,1,"<a href=\"Http\/Resources\/FilmsResource.php.html#15\">App\\Http\\Resources\\FilmsResource::toArray<\/a>"],[100,1,"<a href=\"Http\/Resources\/GenreResource.php.html#17\">App\\Http\\Resources\\GenreResource::toArray<\/a>"],[100,2,"<a href=\"Http\/Resources\/UserResource.php.html#15\">App\\Http\\Resources\\UserResource::toArray<\/a>"],[100,1,"<a href=\"Jobs\/Classes\/BaseWorkWithFilm.php.html#10\">App\\Jobs\\Classes\\BaseWorkWithFilm::processFilm<\/a>"],[100,3,"<a href=\"Jobs\/Classes\/BaseWorkWithFilm.php.html#21\">App\\Jobs\\Classes\\BaseWorkWithFilm::processLinks<\/a>"],[0,1,"<a href=\"Jobs\/DeleteImages.php.html#23\">App\\Jobs\\DeleteImages::__construct<\/a>"],[0,3,"<a href=\"Jobs\/DeleteImages.php.html#31\">App\\Jobs\\DeleteImages::handle<\/a>"],[100,1,"<a href=\"Jobs\/PendingFilms.php.html#21\">App\\Jobs\\PendingFilms::__construct<\/a>"],[100,2,"<a href=\"Jobs\/PendingFilms.php.html#28\">App\\Jobs\\PendingFilms::handle<\/a>"],[100,1,"<a href=\"Jobs\/UpdateFilms.php.html#21\">App\\Jobs\\UpdateFilms::__construct<\/a>"],[100,2,"<a href=\"Jobs\/UpdateFilms.php.html#28\">App\\Jobs\\UpdateFilms::handle<\/a>"],[0,1,"<a href=\"Jobs\/UploadCommentsFromKinoposk.php.html#24\">App\\Jobs\\UploadCommentsFromKinoposk::__construct<\/a>"],[0,3,"<a href=\"Jobs\/UploadCommentsFromKinoposk.php.html#33\">App\\Jobs\\UploadCommentsFromKinoposk::handle<\/a>"],[100,1,"<a href=\"Listeners\/FilmListener.php.html#16\">App\\Listeners\\FilmListener::handle<\/a>"],[100,1,"<a href=\"Models\/Comment.php.html#50\">App\\Models\\Comment::comment<\/a>"],[100,1,"<a href=\"Models\/Comment.php.html#55\">App\\Models\\Comment::comments<\/a>"],[100,1,"<a href=\"Models\/Comment.php.html#60\">App\\Models\\Comment::user<\/a>"],[100,1,"<a href=\"Models\/Comment.php.html#65\">App\\Models\\Comment::film<\/a>"],[100,1,"<a href=\"Models\/Favorite.php.html#38\">App\\Models\\Favorite::film<\/a>"],[100,1,"<a href=\"Models\/Favorite.php.html#43\">App\\Models\\Favorite::user<\/a>"],[100,1,"<a href=\"Models\/Film.php.html#90\">App\\Models\\Film::scopeOrdered<\/a>"],[100,1,"<a href=\"Models\/Film.php.html#97\">App\\Models\\Film::getScoresCountAttribute<\/a>"],[100,1,"<a href=\"Models\/Film.php.html#102\">App\\Models\\Film::scores<\/a>"],[100,1,"<a href=\"Models\/Film.php.html#107\">App\\Models\\Film::comments<\/a>"],[100,1,"<a href=\"Models\/Film.php.html#112\">App\\Models\\Film::getIsFavoriteAttribute<\/a>"],[100,1,"<a href=\"Models\/Film.php.html#117\">App\\Models\\Film::getRatingAttribute<\/a>"],[100,1,"<a href=\"Models\/Film.php.html#122\">App\\Models\\Film::promos<\/a>"],[100,1,"<a href=\"Models\/Film.php.html#127\">App\\Models\\Film::getModerateFilmsIds<\/a>"],[100,1,"<a href=\"Models\/Film.php.html#132\">App\\Models\\Film::getPendingFilmsIds<\/a>"],[100,1,"<a href=\"Models\/Promo.php.html#40\">App\\Models\\Promo::film<\/a>"],[100,1,"<a href=\"Models\/Role.php.html#19\">App\\Models\\Role::users<\/a>"],[100,1,"<a href=\"Models\/User.php.html#55\">App\\Models\\User::isAdmin<\/a>"],[100,1,"<a href=\"Models\/User.php.html#60\">App\\Models\\User::roles<\/a>"],[100,1,"<a href=\"Models\/User.php.html#65\">App\\Models\\User::favorites<\/a>"],[100,1,"<a href=\"Models\/User.php.html#70\">App\\Models\\User::comments<\/a>"],[100,2,"<a href=\"Models\/User.php.html#75\">App\\Models\\User::setAsAdmin<\/a>"],[100,1,"<a href=\"Observers\/FilmObserver.php.html#15\">App\\Observers\\FilmObserver::created<\/a>"],[100,1,"<a href=\"Observers\/FilmObserver.php.html#26\">App\\Observers\\FilmObserver::updated<\/a>"],[100,1,"<a href=\"Observers\/FilmObserver.php.html#35\">App\\Observers\\FilmObserver::deleted<\/a>"],[100,2,"<a href=\"Policies\/CommentPolicy.php.html#15\">App\\Policies\\CommentPolicy::create<\/a>"],[100,2,"<a href=\"Policies\/CommentPolicy.php.html#23\">App\\Policies\\CommentPolicy::update<\/a>"],[100,3,"<a href=\"Policies\/CommentPolicy.php.html#31\">App\\Policies\\CommentPolicy::delete<\/a>"],[100,1,"<a href=\"Policies\/FilmPolicy.php.html#9\">App\\Policies\\FilmPolicy::moderate<\/a>"],[100,2,"<a href=\"Providers\/AppServiceProvider.php.html#18\">App\\Providers\\AppServiceProvider::register<\/a>"],[100,1,"<a href=\"Providers\/AppServiceProvider.php.html#36\">App\\Providers\\AppServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/AuthServiceProvider.php.html#28\">App\\Providers\\AuthServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/EventServiceProvider.php.html#32\">App\\Providers\\EventServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/EventServiceProvider.php.html#40\">App\\Providers\\EventServiceProvider::shouldDiscoverEvents<\/a>"],[100,2,"<a href=\"Providers\/RouteServiceProvider.php.html#25\">App\\Providers\\RouteServiceProvider::boot<\/a>"],[100,1,"<a href=\"Repositories\/classes\/FilmRepository.php.html#18\">App\\Repositories\\classes\\FilmRepository::__construct<\/a>"],[100,2,"<a href=\"Repositories\/classes\/FilmRepository.php.html#23\">App\\Repositories\\classes\\FilmRepository::getFilm<\/a>"],[100,1,"<a href=\"Repositories\/classes\/FilmRepository.php.html#38\">App\\Repositories\\classes\\FilmRepository::getCommentsByFilm<\/a>"],[100,1,"<a href=\"Repositories\/classes\/KinopoiskFilmRepository.php.html#16\">App\\Repositories\\classes\\KinopoiskFilmRepository::__construct<\/a>"],[100,3,"<a href=\"Repositories\/classes\/KinopoiskFilmRepository.php.html#25\">App\\Repositories\\classes\\KinopoiskFilmRepository::getCommentsByFilm<\/a>"],[100,2,"<a href=\"Repositories\/classes\/KinopoiskFilmRepository.php.html#68\">App\\Repositories\\classes\\KinopoiskFilmRepository::getFilm<\/a>"],[100,2,"<a href=\"Rules\/CommentBelongsToFilm.php.html#16\">App\\Rules\\CommentBelongsToFilm::validate<\/a>"],[100,3,"<a href=\"Rules\/DisallowRatingInResponse.php.html#10\">App\\Rules\\DisallowRatingInResponse::validate<\/a>"],[100,1,"<a href=\"Rules\/DisallowRatingInResponse.php.html#23\">App\\Rules\\DisallowRatingInResponse::message<\/a>"],[100,5,"<a href=\"Rules\/FilmExists.php.html#11\">App\\Rules\\FilmExists::validate<\/a>"],[100,1,"<a href=\"Rules\/FilmExists.php.html#28\">App\\Rules\\FilmExists::messageFailedDelete<\/a>"],[100,1,"<a href=\"Rules\/FilmExists.php.html#33\">App\\Rules\\FilmExists::messageFailedAppend<\/a>"],[100,3,"<a href=\"Rules\/ImageUrl.php.html#10\">App\\Rules\\ImageUrl::validate<\/a>"],[100,1,"<a href=\"Rules\/ImageUrl.php.html#21\">App\\Rules\\ImageUrl::getMessage<\/a>"],[100,1,"<a href=\"Services\/CommentService.php.html#12\">App\\Services\\CommentService::__construct<\/a>"],[100,1,"<a href=\"Services\/CommentService.php.html#16\">App\\Services\\CommentService::requestComments<\/a>"],[100,5,"<a href=\"Services\/CommentService.php.html#21\">App\\Services\\CommentService::reformatCommentsFromKinopoisk<\/a>"],[100,1,"<a href=\"Services\/CommentService.php.html#47\">App\\Services\\CommentService::reformatRatingCommentFromKinopoisk<\/a>"],[100,1,"<a href=\"Services\/FilmService.php.html#15\">App\\Services\\FilmService::__construct<\/a>"],[100,2,"<a href=\"Services\/FilmService.php.html#19\">App\\Services\\FilmService::requestFilm<\/a>"],[100,3,"<a href=\"Services\/FilmService.php.html#32\">App\\Services\\FilmService::getSimilar<\/a>"],[100,1,"<a href=\"Services\/FilmService.php.html#48\">App\\Services\\FilmService::transformImdbData<\/a>"],[100,3,"<a href=\"Services\/FilmService.php.html#73\">App\\Services\\FilmService::saveFile<\/a>"],[100,1,"<a href=\"Services\/HttpClientService.php.html#11\">App\\Services\\HttpClientService::__construct<\/a>"],[100,1,"<a href=\"Services\/HttpClientService.php.html#15\">App\\Services\\HttpClientService::sendRequest<\/a>"],[100,2,"<a href=\"Services\/HttpClientService.php.html#21\">App\\Services\\HttpClientService::createRequest<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

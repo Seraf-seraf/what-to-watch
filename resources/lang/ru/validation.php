@@ -1,0 +1,21 @@
+<?php
+return [
+    'required' => 'Поле :attribute обязательно для заполнения',
+    'max.string' => 'Поле :attribute может быть длиной максимум :max символов',
+    'min.string' => 'Поле :attribute должно быть длиной минимум :min символов',
+    'string' => 'Поле :attribute должно передаваться как строка',
+    'image' => 'Поле :attribute поддерживает только изображения',
+    'array' => 'Поле :attribute должно передаваться как массив',
+    'numeric' => 'Поле :attribute должно передаваться как число',
+    'int' => 'Поле :attribute должно передаваться как целое число',
+    'integer' => 'Поле :attribute должно передаваться как целое число',
+    'hex_color' => 'Неверный формат hex у поля :attribute',
+    'min.numeric' => 'Минимальное значение у поля :attribute :min',
+    'max.numeric' => 'Максимальное значение у поля :attribute :max',
+    'email.email' => 'Поле Email должно быть корректным email-адресом',
+    'unique' => 'Поле :attribute должно быть уникальным',
+    'confirmed' => 'Не совпадает с полем :attribute',
+    'current_password' => 'Неверный старый пароль',
+    'size.file' => 'Максимальный размер файла :size',
+    'size.string' => 'Максимальный размер файла :size',
+];

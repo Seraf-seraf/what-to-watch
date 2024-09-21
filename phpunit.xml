@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         processIsolation="false"
+>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory>tests/Feature</directory>
+        </testsuite>
+    </testsuites>
+    <coverage>
+        <report>
+            <html outputDirectory="coverage/"/>
+        </report>
+    </coverage>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="BCRYPT_ROUNDS" value="4"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <!--         <env name="DB_CONNECTION" value="mysql"/>-->
+        <!--         <env name="DB_DATABASE" value="test_wtw"/>-->
+        <env name="MAIL_MAILER" value="array"/>
+        <env name="PULSE_ENABLED" value="false"/>
+        <env name="QUEUE_CONNECTION" value="database"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="TELESCOPE_ENABLED" value="true"/>
+    </php>
+    <source>
+        <exclude>
+            <directory suffix=".php">./app/Http/Middleware</directory>
+            <file>./app/Providers/TelescopeServiceProvider.php</file>
+        </exclude>
+
+        <include>
+            <directory suffix=".php">./app</directory>
+            <directory suffix=".php">./app/Http/Middleware/RouteMiddleware</directory>
+        </include>
+
+    </source>
+</phpunit>
