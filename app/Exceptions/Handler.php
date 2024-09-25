@@ -76,6 +76,6 @@ class Handler extends ExceptionHandler
         $request,
         AuthenticationException $exception
     ): Response|JsonResponse|RedirectResponse {
-        return response()->json(['message' => 'Нет активной сессии'], 401);
+        return response()->json(['error' => 'Нет активной сессии'], 401);
     }
 }

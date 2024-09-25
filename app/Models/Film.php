@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Rennokki\QueryCache\Traits\QueryCacheable;
 
 /**
@@ -55,13 +56,22 @@ class Film extends Model
 
     protected static bool $flushCacheOnUpdate = true;
 
+    public function getCacheTagsToInvalidateOnUpdate($relation = null, $pivotedModels = null): array
+    {
+        return [
+            "film:{$this->id}",
+            'films',
+        ];
+    }
+
+
     protected $casts = [
         'rating' => 'int',
         'scoresCount' => 'int',
         'starring' => Json::class,
         'genre' => Json::class,
         'runTime' => 'int',
-        'released' => 'int',
+        'released' => 'string',
         'isFavorite' => 'bool',
     ];
 
@@ -109,9 +119,9 @@ class Film extends Model
         return $this->hasMany(Comment::class, 'film_id');
     }
 
-    public function getIsFavoriteAttribute(): ?bool
+    public function getIsFavoriteAttribute(): bool
     {
-        return auth()->user()?->favorites()->where(['film_id' => $this->id])->exists();
+        return $this->favorites()->where('user_id', auth()->user()?->id)->exists();
     }
 
     public function getRatingAttribute(): int|string
@@ -119,9 +129,14 @@ class Film extends Model
         return number_format($this->comments()->whereNotNull('rating')->avg('rating'), 2) ?? 0;
     }
 
-    public function promos(): HasMany
+    public function promo(): HasOne
     {
-        return $this->hasMany(Promo::class, 'film_id');
+        return $this->hasOne(Promo::class, 'film_id');
+    }
+
+    public function favorites(): HasMany
+    {
+        return $this->hasMany(Favorite::class, 'film_id', 'id');
     }
 
     public function getModerateFilmsIds(): \Illuminate\Support\Collection

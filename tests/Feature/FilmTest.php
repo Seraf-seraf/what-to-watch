@@ -111,9 +111,9 @@ class FilmTest extends TestCase
         $film = Film::factory()
             ->has(
                 Comment::factory(3)->sequence(
-                    ['rating' => 5, 'comment_id' => null],
-                    ['rating' => 3, 'comment_id' => null],
-                    ['rating' => 3, 'comment_id' => null]
+                    ['rating' => 5, 'parent_id' => null],
+                    ['rating' => 3, 'parent_id' => null],
+                    ['rating' => 3, 'parent_id' => null]
                 )
             )
             ->create(['released' => 2001, 'status' => 'ready']);
@@ -174,7 +174,7 @@ class FilmTest extends TestCase
             [
             'status' => Film::STATUS_READY,
             'genre' => 'shooter, comedy',
-            'released' => 2024
+            'released' => '2024'
             ]
         );
 
@@ -184,7 +184,7 @@ class FilmTest extends TestCase
                 [
                 'status' => Film::STATUS_READY,
                 'genre' => ["comedy", "shooter"],
-                'released' => 2024
+                'released' => '2024'
                 ]
             );
 
@@ -193,7 +193,7 @@ class FilmTest extends TestCase
             [
             'id' => $film->id,
             'status' => Film::STATUS_READY,
-            'released' => 2024
+            'released' => '2024'
             ]
         );
 

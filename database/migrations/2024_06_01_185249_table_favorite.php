@@ -15,6 +15,7 @@ return new class extends Migration {
                 $table->id();
                 $table->unsignedBigInteger('user_id');
                 $table->unsignedBigInteger('film_id');
+                $table->timestamp('created_at')->useCurrent()->nullable();
 
                 $table->foreign('film_id')
                     ->references('id')

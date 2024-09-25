@@ -132,7 +132,7 @@ class AuthTest extends TestCase
     public function testLogoutWithoutLogin()
     {
         $this->post(route('logout'))
-            ->assertJsonFragment(['message' => 'Нет активной сессии'])
+            ->assertJsonFragment(['error' => 'Нет активной сессии'])
             ->assertStatus(401);
     }
 }

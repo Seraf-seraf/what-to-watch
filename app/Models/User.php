@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Rennokki\QueryCache\Traits\QueryCacheable;
 
 /**
  * Class User
@@ -32,10 +33,20 @@ class User extends Authenticatable
     use HasApiTokens;
     use HasFactory;
     use Notifiable;
+    use QueryCacheable;
+    protected int $cacheFor = 86400;
+
+    protected static bool $flushCacheOnUpdate = true;
+
+    public function getCacheTagsToInvalidateOnUpdate($relation = null, $pivotedModels = null): array
+    {
+        return [
+            "user:{$this->id}",
+            'users',
+        ];
+    }
 
     public $timestamps = false;
-
-    protected $table = 'users';
 
     protected $hidden = [
         'password',

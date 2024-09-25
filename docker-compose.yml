@@ -43,6 +43,10 @@ services:
             - 443:443
         depends_on:
             - app
+        healthcheck:
+            test: curl --fail http://localhost || exit 1
+            start_period: 20s
+            retries: 5
 
 volumes:
     wtw_database_data:

@@ -16,17 +16,12 @@ return new class extends Migration {
                 $table->unsignedBigInteger('user_id')->nullable();
                 $table->text('text');
                 $table->smallInteger('rating')->nullable();
-                $table->unsignedBigInteger('comment_id')->nullable();
+                $table->nestedSet();
+                $table->timestamps();
 
                 $table->foreign('user_id')
                     ->references('id')
                     ->on('users')
-                    ->onUpdate('CASCADE')
-                    ->onDelete('CASCADE');
-
-                $table->foreign('comment_id')
-                    ->references('id')
-                    ->on('comments')
                     ->onUpdate('CASCADE')
                     ->onDelete('CASCADE');
             });

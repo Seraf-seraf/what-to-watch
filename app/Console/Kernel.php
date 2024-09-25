@@ -4,7 +4,6 @@ namespace App\Console;
 
 use App\Jobs\DeleteImages;
 use App\Jobs\PendingFilms;
-use App\Jobs\UpdateFilms;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -16,7 +15,6 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         $schedule->job(PendingFilms::class)->daily();
-        $schedule->job(UpdateFilms::class)->daily();
         $schedule->job(DeleteImages::class)->monthly();
     }
 

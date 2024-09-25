@@ -215,7 +215,7 @@ class CommentTest extends TestCase
             'user_id' => $this->user->id,
             'film_id' => $this->film->id,
             'rating' => null,
-            'comment_id' => $comment->id
+            'parent_id' => $comment->id
             ]
         );
 
@@ -265,7 +265,7 @@ class CommentTest extends TestCase
             [
             'text' => $comment->text,
             'rating' => 1,
-            'comment_id' => $comment->id
+            'parent_id' => $comment->id
             ]
         );
 
@@ -297,7 +297,7 @@ class CommentTest extends TestCase
             route('comments.add', ['film' => $this->film]),
             [
             'text' => $answer->text,
-            'comment_id' => $comment->id
+            'parent_id' => $comment->id
             ]
         );
 
@@ -379,7 +379,7 @@ class CommentTest extends TestCase
         $response->assertStatus(401)
             ->assertJsonFragment(
                 [
-                'message' => 'Нет активной сессии'
+                'error' => 'Нет активной сессии'
                 ]
             );
 
@@ -415,7 +415,7 @@ class CommentTest extends TestCase
             route('comments.add', ['film' => $film2->id]),
             [
             'text' => $comment->text,
-            'comment_id' => $comment->id,
+            'parent_id' => $comment->id,
             ]
         );
 
@@ -423,7 +423,7 @@ class CommentTest extends TestCase
             ->assertStatus(422)
             ->assertJsonFragment(
                 [
-                'comment_id' => ['Ответ можно добавить только к существующему отзыву у фильма']
+                'parent_id' => ['Ответ можно добавить только к существующему отзыву у фильма']
                 ]
             );
         $this->assertDatabaseCount(Comment::class, 1);
@@ -435,7 +435,7 @@ class CommentTest extends TestCase
             [
             'film_id' => $this->film->id,
             'user_id' => $this->user->id,
-            'comment_id' => null,
+            'parent_id' => null,
             'rating' => 10
             ]
         );
@@ -446,7 +446,7 @@ class CommentTest extends TestCase
             'film_id' => $this->film->id,
             'user_id' => $this->user->id,
             'rating' => null,
-            'comment_id' => $comment->id
+            'parent_id' => $comment->id
             ]
         );
 
@@ -455,6 +455,8 @@ class CommentTest extends TestCase
 
         $response = $this->get(route('comments.show', ['film' => $this->film->id]));
 
+        dump($response->json());
+
         $response
             ->assertStatus(200)
             ->assertJsonFragment(
@@ -462,54 +464,35 @@ class CommentTest extends TestCase
                     'id' => $comment->id,
                     'text' => $comment->text,
                     'rating' => $comment->rating,
-                    'created_at' => $comment->created_at,
+                    'created_at' => $comment->created_at->format('Y-m-d H:i:s'),
                     'user' => [
                         'id' => $this->user->id,
                         'name' => $this->user->name,
                     ],
-                    'comments' => [
+                    'answers' => [
                         [
                             'id' => $firstAnswer->id,
                             'text' => $firstAnswer->text,
-                            'created_at' => $firstAnswer->created_at,
-                            'comments' => [],
+                            'created_at' => $firstAnswer->created_at->format('Y-m-d H:i:s'),
+                            'user' => [
+                                'id' => $this->user->id,
+                                'name' => $this->user->name,
+                            ],
+                            'answers' => [],
                         ],
                         [
                             'id' => $secondAnswer->id,
                             'text' => $secondAnswer->text,
-                            'created_at' => $secondAnswer->created_at,
-                            'comments' => [],
+                            'created_at' => $secondAnswer->created_at->format('Y-m-d H:i:s'),
+                            'user' => [
+                                'id' => $this->user->id,
+                                'name' => $this->user->name,
+                            ],
+                            'answers' => [],
                         ]
                     ]
-                ],
+                ]
             );
-    }
-
-    public function testCommentRelationship()
-    {
-        $comment = Comment::factory()->create(
-            [
-            'film_id' => $this->film->id,
-            'user_id' => $this->user->id,
-            'comment_id' => null,
-            'rating' => 10
-            ]
-        );
-
-
-        $answer = Comment::factory()->create(
-            [
-            'film_id' => $this->film->id,
-            'user_id' => $this->user->id,
-            'rating' => null,
-            'comment_id' => $comment->id
-            ]
-        );
-
-        $this->assertEquals([$comment->id, $answer->id], $this->user->comments->pluck('id')->toArray());
-        $this->assertEquals($this->user->id, $comment->user->id);
-        $this->assertEquals($comment->id, $answer->comment->id);
-        $this->assertEquals($this->film->id, $comment->film->id);
     }
 
     protected function setUp(): void

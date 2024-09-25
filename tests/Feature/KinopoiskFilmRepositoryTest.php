@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Repositories\classes\KinopoiskFilmRepository;
 use App\Services\HttpClientService;
 use GuzzleHttp\Exception\ClientException;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery\MockInterface;
 use Psr\Http\Message\RequestInterface;
 use Tests\TestCase;
@@ -14,6 +15,8 @@ use Tests\TestCase;
  */
 class KinopoiskFilmRepositoryTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function testGetFilmId()
     {
         $imdb_id = 'tt00000000';

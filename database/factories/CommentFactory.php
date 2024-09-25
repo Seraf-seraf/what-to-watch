@@ -30,7 +30,7 @@ final class CommentFactory extends Factory
             'user_id' => \App\Models\User::factory(),
             'text' => fake()->sentence(40),
             'rating' => fake()->numberBetween(1, 10),
-            'comment_id' => null,
+            'parent_id' => null,
             'film_id' => \App\Models\Film::factory(),
             'created_at' => fake()->dateTime(),
         ];

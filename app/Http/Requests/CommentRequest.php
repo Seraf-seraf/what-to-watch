@@ -2,12 +2,15 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Film;
 use App\Rules\CommentBelongsToFilm;
 use App\Rules\DisallowRatingInResponse;
 use Illuminate\Contracts\Validation\ValidationRule;
 
 class CommentRequest extends BaseFormRequest
 {
+    private ?int $film_id = null;
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -35,12 +38,21 @@ class CommentRequest extends BaseFormRequest
                 'max:10',
             ],
             'text' => "{$this->requiredOnPostMethod()}|string|min:50",
-            'comment_id' => [
+            'parent_id' => [
                 new CommentBelongsToFilm(),
                 'nullable',
                 'exists:comments,id',
             ],
         ];
+    }
+
+    public function prepareForValidation(): void
+    {
+        if ($this->isMethod('POST')) {
+            $this->merge([
+                'film_id' => $this->film?->id,
+            ]);
+        }
     }
 
     private function requiredOnPostMethod(): string

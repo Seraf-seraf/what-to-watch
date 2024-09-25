@@ -9,7 +9,7 @@ class DisallowRatingInResponse implements ValidationRule
 {
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $commentId = request()->input('comment_id');
+        $commentId = request()->input('parent_id');
         if (!is_null($commentId) && !is_null($value)) {
             $fail($this->message());
         }

@@ -5,12 +5,27 @@ namespace App\Http\Controllers;
 use App\Exceptions\InvalidCredentialsException;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\UserRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
+use Knuckles\Scribe\Attributes\Authenticated;
+use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\ResponseFromApiResource;
+use Knuckles\Scribe\Attributes\Unauthenticated;
 
+/**
+ * @group Authentication
+ */
+#[Response('{"error": "Нет активной сессии"}', 401)]
 class AuthController extends Controller
 {
+    #[Unauthenticated]
+    #[ResponseFromApiResource(UserResource::class, User::class, status: 201)]
+    #[Response(
+        '{"message": "Переданные данные не корректны","errors": {"email": ["Поле email должно быть уникальным"]}}',
+        422
+    )]
     public function register(UserRequest $request): JsonResponse
     {
         $values = $request->validated();
@@ -25,10 +40,11 @@ class AuthController extends Controller
 
         $token = $user->createToken('auth-token')->plainTextToken;
 
-        return response()->json(['user' => $user, 'token' => $token], 201);
+        return UserResource::make($user)->additional(['token' => $token])->response()->setStatusCode(201);
     }
 
-    public function login(LoginRequest $request)
+    #[Response('{"error": "Неверный email или пароль"}', 401)]
+    public function login(LoginRequest $request): JsonResponse
     {
         if (!Auth::attempt($request->validated())) {
             throw new InvalidCredentialsException('Неверный email или пароль');
@@ -36,12 +52,12 @@ class AuthController extends Controller
 
         $token = Auth::user()->createToken('auth_token')->plainTextToken;
 
-        $data = array_merge(Auth::user()->toArray(), ['token' => $token]);
-
-        return response()->json($data, 200);
+        return UserResource::make(Auth::user())->additional(['token' => $token])->response()->setStatusCode(200);
     }
 
-    public function logout()
+    #[Authenticated]
+    #[Response([], status: 204)]
+    public function logout(): JsonResponse
     {
         Auth::user()->tokens()->delete();
 

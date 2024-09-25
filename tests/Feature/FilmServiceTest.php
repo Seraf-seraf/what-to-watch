@@ -5,12 +5,15 @@ namespace Tests\Feature;
 use App\Models\Film;
 use App\Repositories\classes\FilmRepository;
 use App\Services\FilmService;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class FilmServiceTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function testFilmRequest()
     {
         $filmId = 'tt1234567';

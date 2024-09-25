@@ -14,13 +14,12 @@ class FavoriteTest extends TestCase
 
     public function testFavoriteList()
     {
-        Favorite::factory(5)->create();
+        Favorite::factory(5)->create(['user_id' => $this->user]);
 
         $response = $this->get(route('favorite.index'));
+        $response->assertStatus(200);
 
-        $response
-            ->assertStatus(200)
-            ->assertJsonCount(5, $response->json('data'));
+        $this->assertEquals(5, count($response->json('data')));
     }
 
     public function testAddFilmToFavorite()
@@ -71,10 +70,10 @@ class FavoriteTest extends TestCase
         $response = $this->delete(route('favorite.delete', ['film' => $this->film]));
 
         $response
-            ->assertStatus(422)
+            ->assertStatus(404)
             ->assertJson(
                 [
-                'errors' => ['film_id' => ['Фильм не добавлялся в избранное']]
+                    "error" => "Запрашиваемая страница не существует"
                 ]
             );
 
@@ -93,10 +92,10 @@ class FavoriteTest extends TestCase
         $response = $this->post(route('favorite.add', ['film' => $this->film]));
 
         $response
-            ->assertStatus(422)
+            ->assertStatus(409)
             ->assertJson(
                 [
-                'errors' => ['film_id' => ['Фильм уже добавлен в избранное']]
+                    'error' => "Фильм с id {$this->film->id} уже в избранном"
                 ]
             );
 

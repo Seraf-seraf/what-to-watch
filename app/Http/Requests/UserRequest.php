@@ -58,15 +58,4 @@ class UserRequest extends BaseFormRequest
 
         return $rule;
     }
-
-    public function attributes(): array
-    {
-        return [
-            'name' => 'Имя',
-            'email' => 'Email',
-            'password' => 'Пароль',
-            'password_confirmation' => 'Повтор пароля',
-            'file' => 'Аватар пользователя',
-        ];
-    }
 }

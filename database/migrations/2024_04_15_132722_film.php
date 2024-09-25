@@ -25,7 +25,7 @@ return new class extends Migration {
                 $table->json('starring')->nullable();
                 $table->integer('runTime')->nullable();
                 $table->json('genre')->nullable();
-                $table->integer('released')->nullable();
+                $table->string('released', 15)->nullable();
                 $table->string('status')->default('pending');
             });
         }

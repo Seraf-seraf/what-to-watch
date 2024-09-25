@@ -14,16 +14,11 @@ class UserResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $collection = [
+        return [
             'id' => $this->id,
             'name' => $this->name,
             'email' => $this->email,
+            'file' => $this->whenNotNull($this->file)
         ];
-
-        if (!empty($this->file)) {
-            $collection['file'] = $this->file;
-        }
-
-        return $collection;
     }
 }

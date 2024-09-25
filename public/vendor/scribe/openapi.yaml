@@ -1,0 +1,1300 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1:
+    get:
+      summary: ''
+      operationId: getApiV1
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Welcome to API what-to-watch'
+                properties:
+                  message:
+                    type: string
+                    example: 'Welcome to API what-to-watch'
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/films:
+    get:
+      summary: ''
+      operationId: getApiV1Films
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 69
+                      name: 'Example Movie 5'
+                      posterImage: 'https://example.com/poster5.jpg'
+                      previewImage: 'https://example.com/preview5.jpg'
+                      backgroundImage: 'https://example.com/background5.jpg'
+                      backgroundColor: '#ABC123'
+                      videoLink: 'https://example.com/video5.mp4'
+                      previewVideoLink: 'https://example.com/previewVideo5.mp4'
+                      description: 'A historical epic...'
+                      rating: '6.00'
+                      scoresCount: 2
+                      director: 'Director 5'
+                      starring:
+                        - 'Actor 9'
+                        - 'Actor 10'
+                      runTime: 160
+                      genre:
+                        - history
+                      released: 2022
+                      status: ready
+                      is_favorite: false
+                    -
+                      id: 65
+                      name: 'Example Movie 1'
+                      posterImage: 'https://example.com/poster1.jpg'
+                      previewImage: 'https://example.com/preview1.jpg'
+                      backgroundImage: 'https://example.com/background1.jpg'
+                      backgroundColor: '#FFFFFF'
+                      videoLink: 'https://example.com/video1.mp4'
+                      previewVideoLink: 'https://example.com/previewVideo1.mp4'
+                      description: 'A great movie about...'
+                      rating: '10.00'
+                      scoresCount: 2
+                      director: 'Director 1'
+                      starring:
+                        - 'Actor 1'
+                        - 'Actor 2'
+                      runTime: 120
+                      genre:
+                        - action
+                      released: 2021
+                      status: ready
+                      is_favorite: false
+                    -
+                      id: 67
+                      name: 'Example Movie 3'
+                      posterImage: 'https://example.com/poster3.jpg'
+                      previewImage: 'https://example.com/preview3.jpg'
+                      backgroundImage: 'https://example.com/background3.jpg'
+                      backgroundColor: '#123456'
+                      videoLink: 'https://example.com/video3.mp4'
+                      previewVideoLink: 'https://example.com/previewVideo3.mp4'
+                      description: 'An action-packed thriller...'
+                      rating: '0.00'
+                      scoresCount: 0
+                      director: 'Director 3'
+                      starring:
+                        - 'Actor 5'
+                        - 'Actor 6'
+                      runTime: 150
+                      genre:
+                        - thriller
+                      released: 2020
+                      status: ready
+                      is_favorite: false
+                    -
+                      id: 66
+                      name: 'Example Movie 2'
+                      posterImage: 'https://example.com/poster2.jpg'
+                      previewImage: 'https://example.com/preview2.jpg'
+                      backgroundImage: 'https://example.com/background2.jpg'
+                      backgroundColor: '#ABCDEF'
+                      videoLink: 'https://example.com/video2.mp4'
+                      previewVideoLink: 'https://example.com/previewVideo2.mp4'
+                      description: 'A biography of a famous person.'
+                      rating: '0.00'
+                      scoresCount: 0
+                      director: 'Director 2'
+                      starring:
+                        - 'Actor 3'
+                        - 'Actor 4'
+                      runTime: 130
+                      genre:
+                        - biography
+                      released: 2019
+                      status: ready
+                      is_favorite: false
+                    -
+                      id: 68
+                      name: 'Example Movie 4'
+                      posterImage: 'https://example.com/poster4.jpg'
+                      previewImage: 'https://example.com/preview4.jpg'
+                      backgroundImage: 'https://example.com/background4.jpg'
+                      backgroundColor: '#654321'
+                      videoLink: 'https://example.com/video4.mp4'
+                      previewVideoLink: 'https://example.com/previewVideo4.mp4'
+                      description: 'A touching drama...'
+                      rating: '0.00'
+                      scoresCount: 0
+                      director: 'Director 4'
+                      starring:
+                        - 'Actor 7'
+                        - 'Actor 8'
+                      runTime: 140
+                      genre:
+                        - history
+                      released: 2018
+                      status: ready
+                      is_favorite: false
+                  links:
+                    first: 'http://localhost/api/v1/films?page=1'
+                    last: 'http://localhost/api/v1/films?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: pagination.previous
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/films?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: pagination.next
+                        active: false
+                    path: 'http://localhost/api/v1/films'
+                    per_page: 8
+                    to: 5
+                    total: 5
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 69
+                        name: 'Example Movie 5'
+                        posterImage: 'https://example.com/poster5.jpg'
+                        previewImage: 'https://example.com/preview5.jpg'
+                        backgroundImage: 'https://example.com/background5.jpg'
+                        backgroundColor: '#ABC123'
+                        videoLink: 'https://example.com/video5.mp4'
+                        previewVideoLink: 'https://example.com/previewVideo5.mp4'
+                        description: 'A historical epic...'
+                        rating: '6.00'
+                        scoresCount: 2
+                        director: 'Director 5'
+                        starring:
+                          - 'Actor 9'
+                          - 'Actor 10'
+                        runTime: 160
+                        genre:
+                          - history
+                        released: 2022
+                        status: ready
+                        is_favorite: false
+                      -
+                        id: 65
+                        name: 'Example Movie 1'
+                        posterImage: 'https://example.com/poster1.jpg'
+                        previewImage: 'https://example.com/preview1.jpg'
+                        backgroundImage: 'https://example.com/background1.jpg'
+                        backgroundColor: '#FFFFFF'
+                        videoLink: 'https://example.com/video1.mp4'
+                        previewVideoLink: 'https://example.com/previewVideo1.mp4'
+                        description: 'A great movie about...'
+                        rating: '10.00'
+                        scoresCount: 2
+                        director: 'Director 1'
+                        starring:
+                          - 'Actor 1'
+                          - 'Actor 2'
+                        runTime: 120
+                        genre:
+                          - action
+                        released: 2021
+                        status: ready
+                        is_favorite: false
+                      -
+                        id: 67
+                        name: 'Example Movie 3'
+                        posterImage: 'https://example.com/poster3.jpg'
+                        previewImage: 'https://example.com/preview3.jpg'
+                        backgroundImage: 'https://example.com/background3.jpg'
+                        backgroundColor: '#123456'
+                        videoLink: 'https://example.com/video3.mp4'
+                        previewVideoLink: 'https://example.com/previewVideo3.mp4'
+                        description: 'An action-packed thriller...'
+                        rating: '0.00'
+                        scoresCount: 0
+                        director: 'Director 3'
+                        starring:
+                          - 'Actor 5'
+                          - 'Actor 6'
+                        runTime: 150
+                        genre:
+                          - thriller
+                        released: 2020
+                        status: ready
+                        is_favorite: false
+                      -
+                        id: 66
+                        name: 'Example Movie 2'
+                        posterImage: 'https://example.com/poster2.jpg'
+                        previewImage: 'https://example.com/preview2.jpg'
+                        backgroundImage: 'https://example.com/background2.jpg'
+                        backgroundColor: '#ABCDEF'
+                        videoLink: 'https://example.com/video2.mp4'
+                        previewVideoLink: 'https://example.com/previewVideo2.mp4'
+                        description: 'A biography of a famous person.'
+                        rating: '0.00'
+                        scoresCount: 0
+                        director: 'Director 2'
+                        starring:
+                          - 'Actor 3'
+                          - 'Actor 4'
+                        runTime: 130
+                        genre:
+                          - biography
+                        released: 2019
+                        status: ready
+                        is_favorite: false
+                      -
+                        id: 68
+                        name: 'Example Movie 4'
+                        posterImage: 'https://example.com/poster4.jpg'
+                        previewImage: 'https://example.com/preview4.jpg'
+                        backgroundImage: 'https://example.com/background4.jpg'
+                        backgroundColor: '#654321'
+                        videoLink: 'https://example.com/video4.mp4'
+                        previewVideoLink: 'https://example.com/previewVideo4.mp4'
+                        description: 'A touching drama...'
+                        rating: '0.00'
+                        scoresCount: 0
+                        director: 'Director 4'
+                        starring:
+                          - 'Actor 7'
+                          - 'Actor 8'
+                        runTime: 140
+                        genre:
+                          - history
+                        released: 2018
+                        status: ready
+                        is_favorite: false
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 69
+                        name:
+                          type: string
+                          example: 'Example Movie 5'
+                        posterImage:
+                          type: string
+                          example: 'https://example.com/poster5.jpg'
+                        previewImage:
+                          type: string
+                          example: 'https://example.com/preview5.jpg'
+                        backgroundImage:
+                          type: string
+                          example: 'https://example.com/background5.jpg'
+                        backgroundColor:
+                          type: string
+                          example: '#ABC123'
+                        videoLink:
+                          type: string
+                          example: 'https://example.com/video5.mp4'
+                        previewVideoLink:
+                          type: string
+                          example: 'https://example.com/previewVideo5.mp4'
+                        description:
+                          type: string
+                          example: 'A historical epic...'
+                        rating:
+                          type: string
+                          example: '6.00'
+                        scoresCount:
+                          type: integer
+                          example: 2
+                        director:
+                          type: string
+                          example: 'Director 5'
+                        starring:
+                          type: array
+                          example:
+                            - 'Actor 9'
+                            - 'Actor 10'
+                          items:
+                            type: string
+                        runTime:
+                          type: integer
+                          example: 160
+                        genre:
+                          type: array
+                          example:
+                            - history
+                          items:
+                            type: string
+                        released:
+                          type: integer
+                          example: 2022
+                        status:
+                          type: string
+                          example: ready
+                        is_favorite:
+                          type: boolean
+                          example: false
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/v1/films?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/v1/films?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: pagination.previous
+                            active: false
+                          -
+                            url: 'http://localhost/api/v1/films?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: pagination.next
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: pagination.previous
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost/api/v1/films'
+                      per_page:
+                        type: integer
+                        example: 8
+                      to:
+                        type: integer
+                        example: 5
+                      total:
+                        type: integer
+                        example: 5
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Films
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 255 символов.'
+                  example: flutbwiwergdyzchjlbbp
+                posterImage:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 255 символов.'
+                  example: ofbyneysq
+                previewImage:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 255 символов.'
+                  example: qpqyeukiypeyqazlllxu
+                backgroundImage:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 255 символов.'
+                  example: rfkgxjcsvpissyxpolpnd
+                backgroundColor:
+                  type: string
+                  description: ''
+                  example: null
+                videoLink:
+                  type: string
+                  description: 'Must be a valid URL. Поле value может быть длиной максимум 255 символов.'
+                  example: sumbxclvsamiw
+                previewVideoLink:
+                  type: string
+                  description: 'Must be a valid URL. Поле value может быть длиной максимум 255 символов.'
+                  example: wcjnrkdjvqdndzoe
+                description:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 1000 символов.'
+                  example: 'Sunt nihil et sed distinctio vero blanditiis.'
+                director:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 255 символов.'
+                  example: kkhve
+                starring:
+                  type: string
+                  description: ''
+                  example: molestias
+                runTime:
+                  type: number
+                  description: ''
+                  example: 1401497.69466
+                genre:
+                  type: string
+                  description: ''
+                  example: voluptas
+                released:
+                  type: integer
+                  description: ''
+                  example: 3
+                status:
+                  type: string
+                  description: ''
+                  example: ready
+                  enum:
+                    - ready
+                    - pending
+                    - moderate
+                imdb_id:
+                  type: string
+                  description: 'Must match the regex /^tt\d{7,8}$/.'
+                  example: tt06399530
+      security: []
+  '/api/v1/films/{film_id}':
+    get:
+      summary: ''
+      operationId: getApiV1FilmsFilm_id
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 65
+                    name: 'Example Movie 1'
+                    posterImage: 'https://example.com/poster1.jpg'
+                    previewImage: 'https://example.com/preview1.jpg'
+                    backgroundImage: 'https://example.com/background1.jpg'
+                    backgroundColor: '#FFFFFF'
+                    videoLink: 'https://example.com/video1.mp4'
+                    previewVideoLink: 'https://example.com/previewVideo1.mp4'
+                    description: 'A great movie about...'
+                    rating: '10.00'
+                    scoresCount: 2
+                    director: 'Director 1'
+                    starring:
+                      - 'Actor 1'
+                      - 'Actor 2'
+                    runTime: 120
+                    genre:
+                      - action
+                    released: 2021
+                    status: ready
+                    is_favorite: false
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 65
+                      name:
+                        type: string
+                        example: 'Example Movie 1'
+                      posterImage:
+                        type: string
+                        example: 'https://example.com/poster1.jpg'
+                      previewImage:
+                        type: string
+                        example: 'https://example.com/preview1.jpg'
+                      backgroundImage:
+                        type: string
+                        example: 'https://example.com/background1.jpg'
+                      backgroundColor:
+                        type: string
+                        example: '#FFFFFF'
+                      videoLink:
+                        type: string
+                        example: 'https://example.com/video1.mp4'
+                      previewVideoLink:
+                        type: string
+                        example: 'https://example.com/previewVideo1.mp4'
+                      description:
+                        type: string
+                        example: 'A great movie about...'
+                      rating:
+                        type: string
+                        example: '10.00'
+                      scoresCount:
+                        type: integer
+                        example: 2
+                      director:
+                        type: string
+                        example: 'Director 1'
+                      starring:
+                        type: array
+                        example:
+                          - 'Actor 1'
+                          - 'Actor 2'
+                        items:
+                          type: string
+                      runTime:
+                        type: integer
+                        example: 120
+                      genre:
+                        type: array
+                        example:
+                          - action
+                        items:
+                          type: string
+                      released:
+                        type: integer
+                        example: 2021
+                      status:
+                        type: string
+                        example: ready
+                      is_favorite:
+                        type: boolean
+                        example: false
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1FilmsFilm_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: film_id
+        description: 'The ID of the film.'
+        example: 65
+        required: true
+        schema:
+          type: integer
+  '/api/v1/films/{film_id}/similar':
+    get:
+      summary: ''
+      operationId: getApiV1FilmsFilm_idSimilar
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data: []
+                properties:
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: film_id
+        description: 'The ID of the film.'
+        example: 65
+        required: true
+        schema:
+          type: integer
+  '/api/v1/films/{id}':
+    patch:
+      summary: ''
+      operationId: patchApiV1FilmsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 255 символов.'
+                  example: bqbatdbimrz
+                posterImage:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 255 символов.'
+                  example: fdsamhdv
+                previewImage:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 255 символов.'
+                  example: dzteosuvklnky
+                backgroundImage:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 255 символов.'
+                  example: rppgn
+                backgroundColor:
+                  type: string
+                  description: ''
+                  example: null
+                videoLink:
+                  type: string
+                  description: 'Must be a valid URL. Поле value может быть длиной максимум 255 символов.'
+                  example: ydmbrdjc
+                previewVideoLink:
+                  type: string
+                  description: 'Must be a valid URL. Поле value может быть длиной максимум 255 символов.'
+                  example: rkcztavaemkzefg
+                description:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 1000 символов.'
+                  example: 'Unde aut natus aperiam natus.'
+                director:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 255 символов.'
+                  example: ca
+                starring:
+                  type: string
+                  description: ''
+                  example: vitae
+                runTime:
+                  type: number
+                  description: ''
+                  example: 424596917.296
+                genre:
+                  type: string
+                  description: ''
+                  example: ut
+                released:
+                  type: integer
+                  description: ''
+                  example: 12
+                status:
+                  type: string
+                  description: ''
+                  example: moderate
+                  enum:
+                    - ready
+                    - pending
+                    - moderate
+                imdb_id:
+                  type: string
+                  description: 'Must match the regex /^tt\d{7,8}$/.'
+                  example: tt89745994
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the film.'
+        example: 65
+        required: true
+        schema:
+          type: integer
+  /api/v1/promo:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 5
+                    name: null
+                    posterImage: null
+                    previewImage: null
+                    backgroundImage: null
+                    backgroundColor: null
+                    videoLink: null
+                    previewVideoLink: null
+                    description: null
+                    rating: null
+                    scoresCount: null
+                    director: null
+                    starring: null
+                    runTime: null
+                    genre: null
+                    released: null
+                    status: null
+                    is_favorite: false
+                  -
+                    id: 6
+                    name: null
+                    posterImage: null
+                    previewImage: null
+                    backgroundImage: null
+                    backgroundColor: null
+                    videoLink: null
+                    previewVideoLink: null
+                    description: null
+                    rating: null
+                    scoresCount: null
+                    director: null
+                    starring: null
+                    runTime: null
+                    genre: null
+                    released: null
+                    status: null
+                    is_favorite: false
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/promo/{film_id}':
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: film_id
+        description: 'The ID of the film.'
+        example: 5
+        required: true
+        schema:
+          type: integer
+  /api/v1/favorite:
+    get:
+      summary: ''
+      operationId: getApiV1Favorite
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Нет активной сессии'
+                properties:
+                  message:
+                    type: string
+                    example: 'Нет активной сессии'
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/films/{film}/favorite':
+    post:
+      summary: ''
+      operationId: postApiV1FilmsFilmFavorite
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                film_id:
+                  type: string
+                  description: ''
+                  example: null
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1FilmsFilmFavorite
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                film_id:
+                  type: string
+                  description: ''
+                  example: null
+      security: []
+    parameters:
+      -
+        in: path
+        name: film
+        description: 'The film.'
+        example: 65
+        required: true
+        schema:
+          type: integer
+  '/api/v1/films/{film_id}/comments':
+    get:
+      summary: ''
+      operationId: getApiV1FilmsFilm_idComments
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 84
+                    text: 'Text review 1'
+                    rating: 10
+                    created_at: 1726941982
+                    user:
+                      id: 82
+                      name: 'Донат Иванович Семёнов'
+                    comments:
+                      -
+                        id: 86
+                        text: 'Text answer 1'
+                        created_at: 1726920421
+                        comments: []
+                      -
+                        id: 87
+                        text: 'Text answer 2'
+                        created_at: 1726920421
+                        comments: []
+                  -
+                    id: 85
+                    text: 'Text review 2'
+                    rating: 10
+                    created_at: 1726941982
+                    user:
+                      id: 59
+                      name: 'Анастасия Ивановна Щербакова'
+                    comments: []
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1FilmsFilm_idComments
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                film_id:
+                  type: string
+                  description: ''
+                  example: null
+                rating:
+                  type: integer
+                  description: 'This field is required when <code>comment_id</code> is <code>null</code>. Минимальное значение у поля value 1 Максимальное значение у поля value 10.'
+                  example: 2
+                text:
+                  type: string
+                  description: 'Поле value должно быть длиной минимум 50 символов.'
+                  example: ysnsebsfgzxylfhmsidbxahnwgljihljtrrfhemenceqnjdnafwtyorivxrtwxsakutxkbqftoerdguim
+                comment_id:
+                  type: string
+                  description: ''
+                  example: null
+              required:
+                - text
+      security: []
+    parameters:
+      -
+        in: path
+        name: film_id
+        description: 'The ID of the film.'
+        example: 65
+        required: true
+        schema:
+          type: integer
+  '/api/v1/comments/{id}':
+    patch:
+      summary: ''
+      operationId: patchApiV1CommentsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                film_id:
+                  type: string
+                  description: ''
+                  example: null
+                rating:
+                  type: integer
+                  description: 'This field is required when <code>comment_id</code> is <code>null</code>. Минимальное значение у поля value 1 Максимальное значение у поля value 10.'
+                  example: 8
+                text:
+                  type: string
+                  description: 'Поле value должно быть длиной минимум 50 символов.'
+                  example: slghwocmoywdqhgoglkkralvgdodcisowvorwfiditvuyxqsdixjdrf
+                comment_id:
+                  type: string
+                  description: ''
+                  example: null
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the comment.'
+        example: 84
+        required: true
+        schema:
+          type: integer
+  '/api/v1/comments/{comment_id}':
+    delete:
+      summary: ''
+      operationId: deleteApiV1CommentsComment_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: comment_id
+        description: 'The ID of the comment.'
+        example: 84
+        required: true
+        schema:
+          type: integer
+  /api/v1/register:
+    post:
+      summary: ''
+      operationId: postApiV1Register
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 255 символов.'
+                  example: cnkomsbes
+                email:
+                  type: string
+                  description: 'validation.email Поле value может быть длиной максимум 255 символов.'
+                  example: nienow.watson@example.org
+                password:
+                  type: string
+                  description: 'Поле value должно быть длиной минимум 8 символов.'
+                  example: '3A&<",DmqmvX`Y1w1'
+                file:
+                  type: string
+                  format: binary
+                  description: 'Поле value поддерживает только изображения validation.max.'
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/v1/logout:
+    post:
+      summary: ''
+      operationId: postApiV1Logout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/login:
+    post:
+      summary: ''
+      operationId: postApiV1Login
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: validation.email.
+                  example: elbert.gleason@example.org
+                password:
+                  type: string
+                  description: ''
+                  example: "}'lUSa1vr"
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/user:
+    get:
+      summary: ''
+      operationId: getApiV1User
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Нет активной сессии'
+                properties:
+                  message:
+                    type: string
+                    example: 'Нет активной сессии'
+      tags:
+        - Endpoints
+      security: []
+    patch:
+      summary: ''
+      operationId: patchApiV1User
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 255 символов.'
+                  example: bugfpiqwmawoqr
+                email:
+                  type: string
+                  description: 'validation.email Поле value может быть длиной максимум 255 символов.'
+                  example: jeff87@example.com
+                password:
+                  type: string
+                  description: 'Поле value должно быть длиной минимум 8 символов.'
+                  example: 'Ajv_:JOjY&.f,8Q'
+                file:
+                  type: string
+                  format: binary
+                  description: 'Поле value поддерживает только изображения validation.max.'
+      security: []
+  /api/v1/genres:
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 32 символов.'
+                  example: wbphzofdge
+              required:
+                - name
+      security: []
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      name: Шутер
+                    -
+                      name: Ужас
+                    -
+                      name: Семейный
+                    -
+                      name: Комедия
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        name: Шутер
+                      -
+                        name: Ужас
+                      -
+                        name: Семейный
+                      -
+                        name: Комедия
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          example: Шутер
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/genres/{id}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Поле value может быть длиной максимум 32 символов.'
+                  example: tkxmnxvhm
+              required:
+                - name
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the genre.'
+        example: 13
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''

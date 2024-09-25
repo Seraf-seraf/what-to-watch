@@ -2,42 +2,28 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Comment;
+use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CommentResource extends JsonResource
 {
-    public static function buildTree($comments)
+    public function toArray($request): array
     {
-        return $comments->map(function ($comment) {
-            $comment->setRelation('comments', CommentResource::buildTree($comment->comments));
-            return new CommentResource($comment);
-        });
-    }
-
-    public function toArray($request)
-    {
-        $resource = [
-            'id' => $this->id,
-            'text' => $this->text,
-            'rating' => $this->rating,
-            'created_at' => $this->created_at ?? null,
+        $data = [
+            'id' => $this->resource->id,
+            'text' => $this->resource->text,
+            'rating' => $this->whenNotNull($this->resource->rating),
+            'created_at' => $this->resource->created_at->format('Y-m-d H:i:s'),
             'user' => $this->whenLoaded('user', function () {
-                return ['id' => $this->user->id, 'name' => $this->user->name];
-            }),
-            'comments' => $this->whenLoaded('comments', function () {
-                return CommentResource::collection($this->comments);
-            }),
+                return ['id' => $this->resource->user->id, 'name' => $this->resource->user->name];
+            })
         ];
 
-        return array_filter($resource, function ($value) {
-            return !empty($value);
-        });
-    }
+        if ($request->isMethod('GET')) {
+            $data['answers'] = CommentResource::collection($this->resource->children);
+        }
 
-    public static function collection($resource)
-    {
-        return $resource->map(function ($comment) {
-            return new CommentResource($comment);
-        });
+        return $data;
     }
 }

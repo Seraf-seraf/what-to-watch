@@ -30,6 +30,6 @@ class CommentPolicy
      */
     public function delete(User $user, Comment $comment): bool
     {
-        return ($comment->user_id === $user->id && $comment->comments->isEmpty()) || $user->isAdmin();
+        return ($comment->user_id === $user->id && $comment->children->isEmpty()) || $user->isAdmin();
     }
 }

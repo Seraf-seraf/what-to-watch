@@ -7,6 +7,7 @@ use App\Http\Controllers\FilmController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +21,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * @group Others
+ */
 Route::get('/', function () {
     return response()->json(['message' => 'Welcome to API what-to-watch']);
 });
+
 
 // Фильмы
 Route::prefix('/films')->controller(FilmController::class)->middleware('optimal.auth')->group(function () {

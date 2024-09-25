@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Http\Resources\FilmsResource;
+use App\Http\Resources\FilmResource;
 use App\Models\Film;
 use App\repositories\classes\FilmRepository;
 use Illuminate\Http\JsonResponse;
@@ -36,13 +36,13 @@ class FilmService
             ->where('id', '!=', $film->id)
             ->where(function ($query) use ($filmGenres) {
                 foreach ($filmGenres as $genre) {
-                    $query->orWhereJsonContains('genre', (string)$genre);
+                    $query->orWhereJsonContains('genre', strtolower($genre));
                 }
             })
             ->take(config('app.api.similar.limit'))
             ->get();
 
-        return FilmsResource::collection($films)->response()->setStatusCode(200);
+        return FilmResource::collection($films)->response();
     }
 
     public function transformImdbData($imdbData): ?array
@@ -55,7 +55,7 @@ class FilmService
             'description' => $imdbData['Plot'] ?? '',
             'director' => $imdbData['Director'] ?? '',
             'starring' => $imdbData['Actors'] ?? '',
-            'runTime' => (int)filter_var($imdbData['Runtime'], FILTER_SANITIZE_NUMBER_INT) ?? 0,
+            'runTime' => (int) filter_var($imdbData['Runtime'] ?? 0, FILTER_SANITIZE_NUMBER_INT),
             'genre' => $imdbData['Genre'] ?? '',
             'released' => $imdbData['Year'] ?? 0,
             'status' => Film::STATUS_MODERATE,

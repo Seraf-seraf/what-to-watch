@@ -84,6 +84,8 @@ class PromoTest extends TestCase
 
         $response = $this->post(route('set.promo', ['film' => $promoFilm->id]));
 
-        $response->assertStatus(422);
+        $response
+            ->assertStatus(409)
+            ->assertJsonFragment(['error' => "Фильм с id {$promoFilm->id} уже установлен как промо-фильм"]);
     }
 }

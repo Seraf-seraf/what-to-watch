@@ -9,7 +9,7 @@ use Illuminate\Validation\Rule;
 
 class FilmRequest extends BaseFormRequest
 {
-    private const STATUS_FILM = [Film::STATUS_READY, Film::STATUS_PENDING, Film::STATUS_MODERATE];
+    public const STATUS_FILM = [Film::STATUS_READY, Film::STATUS_PENDING, Film::STATUS_MODERATE];
 
     /**
      * Determine if the user is authorized to make this request.

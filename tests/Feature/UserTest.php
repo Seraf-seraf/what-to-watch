@@ -93,7 +93,7 @@ class UserTest extends TestCase
                 'message' => 'Переданные данные не корректны',
                 'errors' => [
                     'email' => [
-                        'Поле Email должно быть уникальным'
+                        'Поле email должно быть уникальным'
                     ]
                 ]
                 ]

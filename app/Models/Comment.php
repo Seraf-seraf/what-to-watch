@@ -2,30 +2,26 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Kalnoy\Nestedset\NodeTrait;
 use Rennokki\QueryCache\Traits\QueryCacheable;
 
 class Comment extends Model
 {
     use QueryCacheable;
     use HasFactory;
+    use NodeTrait;
 
     protected static bool $flushCacheOnUpdate = true;
-
-    public $timestamps = false;
-
     protected int $cacheFor = 3600;
-
-    protected $table = 'comments';
 
     protected $casts = [
         'user_id' => 'int',
         'rating' => 'int',
-        'comment_id' => 'int',
-        'created_at' => 'timestamp',
+        'created_at' => 'datetime',
     ];
 
     protected $fillable = [
@@ -34,7 +30,6 @@ class Comment extends Model
         'user_id',
         'text',
         'rating',
-        'comment_id',
         'created_at',
     ];
 
@@ -43,18 +38,13 @@ class Comment extends Model
         'text',
         'rating',
         'created_at',
-        'comments',
+        'children',
         'user',
     ];
 
-    public function comment(): BelongsTo
+    public function parent(): BelongsTo
     {
-        return $this->belongsTo(Comment::class, 'comment_id');
-    }
-
-    public function comments(): HasMany
-    {
-        return $this->hasMany(Comment::class, 'comment_id');
+        return $this->belongsTo(Comment::class, 'parent_id');
     }
 
     public function user(): BelongsTo
@@ -65,5 +55,13 @@ class Comment extends Model
     public function film(): BelongsTo
     {
         return $this->belongsTo(Film::class, 'film_id');
+    }
+
+    public function loadAllUsers(Comment $comment): void
+    {
+        foreach ($comment->children as $child) {
+            $child->load('user');
+            $this->loadAllUsers($child);
+        }
     }
 }

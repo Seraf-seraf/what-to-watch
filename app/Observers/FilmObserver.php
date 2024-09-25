@@ -3,7 +3,6 @@
 namespace App\Observers;
 
 use App\Jobs\PendingFilms;
-use App\Jobs\UpdateFilms;
 use App\Models\Film;
 use Illuminate\Support\Facades\Log;
 
@@ -25,7 +24,6 @@ class FilmObserver
      */
     public function updated(Film $film): void
     {
-        event(new UpdateFilms());
         Log::channel('film')->info("Updated film with imdb_id: {$film->imdb_id}");
     }
 
