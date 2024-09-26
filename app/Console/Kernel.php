@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->job(PendingFilms::class)->daily();
         $schedule->job(DeleteImages::class)->monthly();
+        $schedule->command('sanctum:prune-expired --hours=24')->daily();
     }
 
     /**
